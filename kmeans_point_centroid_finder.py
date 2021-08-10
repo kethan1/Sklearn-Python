@@ -28,9 +28,11 @@ colors = {
     7: 'black',
 }
 
+# goes through each points and plots it with the color of the cluster it belongs to
 for x_, y_, label in zip(x, y, labels):
     plt.scatter(x_, y_, c=colors[label])
 
+# Plots all the centroids
 for centroid in centroids:
     plt.scatter(
         [centroid[0]], [centroid[1]], c="yellow", linewidths=2, marker="^",
