@@ -4,7 +4,7 @@ import sklearn.model_selection
 import pandas as pd
 
 
-df = pd.read_csv("data/breastcancer/wdbc.data", comment='#')
+df = pd.read_csv("data/breastcancer/wdbc.csv", comment='#')
 df.replace("?", -99999, inplace=True)
 
 y = np.asarray(df["diagnose"])

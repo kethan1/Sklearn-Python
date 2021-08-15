@@ -4,7 +4,7 @@ import sklearn.model_selection
 import pandas as pd
 
 
-df = pd.read_csv("data/iris/iris.data", comment='#')
+df = pd.read_csv("data/iris/iris.csv", comment='#')
 df.replace("?", -99999, inplace=True)
 
 y = np.asarray(df["names"])
