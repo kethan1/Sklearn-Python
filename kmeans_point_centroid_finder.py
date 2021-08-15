@@ -1,13 +1,12 @@
 import random
 
 import matplotlib.pyplot as plt
-import numpy as np
 from sklearn.cluster import KMeans
 
 random_points = [(random.randint(1, 20), random.randint(1, 20)) for _ in range(200)]
 print(random_points)
 
-clf = KMeans(2)
+clf = KMeans(10)
 clf.fit(random_points)
 
 centroids = clf.cluster_centers_
@@ -26,6 +25,8 @@ colors = {
     5: 'orange',
     6: 'pink',
     7: 'black',
+    8: 'brown',
+    9: 'gray'
 }
 
 # goes through each points and plots it with the color of the cluster it belongs to
