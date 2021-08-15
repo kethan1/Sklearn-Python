@@ -10,7 +10,6 @@ df.replace("?", -99999, inplace=True)
 y = np.asarray(df["names"])
 
 x = np.asarray(df.drop(["names"], 1))
-print(x)
 
 # Test size here is 20% of the data
 # X_train, Y_train are the features and labels for the training data
