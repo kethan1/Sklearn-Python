@@ -1,6 +1,6 @@
 import numpy as np
-from sklearn import preprocessing, neighbors
-import sklearn.model_selection 
+from sklearn import neighbors
+import sklearn.model_selection
 import pandas as pd
 
 
