@@ -19,16 +19,16 @@ grayscale_images = {
     for character, paths in images.items()
 }
 
+print(grayscale_images["donald_duck"][0])
+
 
 labels = np.asarray([each_character for character, image_lst in grayscale_images.items() for each_character in len(image_lst) * [character]])
 data = np.asarray([image for character, image_lst in grayscale_images.items() for image in image_lst])
 # print(labels)
-# print(data)
+print(data)
 
 nsamples, nx, ny = data.shape
 reshaped_data = data.reshape((nsamples, nx * ny))
-# cv2.imshow("hi", data)
-# cv2.waitKey(0)
 # x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(reshaped_data, labels, test_size=0.001)
 
 clf = neighbors.KNeighborsClassifier()

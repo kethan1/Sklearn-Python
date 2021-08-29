@@ -1,4 +1,5 @@
 data/knn_image_classifier/unused
+data/malaria_data_set
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
