@@ -7,23 +7,14 @@ import sklearn.model_selection
 datafolder = "data/knn_image_classifier"
 characters = [os.path.join(datafolder, "apples"), os.path.join(datafolder, "donald_duck")]
 
-
 images = {
-    os.path.basename(os.path.normpath(character)): os.listdir(character)
+    path: [cv2.imread(os.path.join(character, image)) for image in os.listdir(character)]
     for character in characters
+    if (path := os.path.basename(os.path.normpath(character)))
 }
 
-
-grayscale_images = {
-    character: [cv2.imread(os.path.join(datafolder, character, image)) for image in paths]
-    for character, paths in images.items()
-}
-
-
-labels = np.asarray([each_character for character, image_lst in grayscale_images.items() for each_character in len(image_lst) * [character]])
-data = np.asarray([image.flatten() for character, image_lst in grayscale_images.items() for image in image_lst])
-# print(labels)
-print(data)
+labels = np.asarray([each_character for character, image_lst in images.items() for each_character in len(image_lst) * [character]])
+data = np.asarray([image.flatten() for _, image_lst in images.items() for image in image_lst])
 
 # x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(reshaped_data, labels, test_size=0.001)
 
